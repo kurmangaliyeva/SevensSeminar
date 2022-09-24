@@ -55,6 +55,9 @@ namespace SevensSeminar
             
             */
 
+
+
+
             /* Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
             Например, задан массив:
             1 4 7 2
@@ -62,7 +65,7 @@ namespace SevensSeminar
             8 4 2 4
             17 -> такого числа в массиве нет */
 
-            
+            /*
             void FindElement(int[,] array, int posRows, int posColums){
                 if (posRows < array.GetLength(0) && posColums < array.GetLength(1))
                     Console.Write(array[posRows, posColums]);
@@ -83,9 +86,43 @@ namespace SevensSeminar
             int colums = Convert.ToInt32(Console.ReadLine());
 
             FindElement(array, rows, colums);
+            */
 
 
 
+            /* Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+            Например, задан массив:
+            1 4 7 2
+            5 9 2 3
+            8 4 2 4
+            Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3. */
+
+
+            void SumColumsArray(int[,] array)
+            {
+                double sum = 0;
+                int j = 0;
+                while (j < array.GetLength(1))
+                {
+                    for (int i = 0; i < array.GetLength(0); i++)
+                    {
+                        sum += array[i, j];
+                    }
+                    sum /= array.GetLength(0);
+                    Console.WriteLine($"Среднее арифметическое столбца {j + 1} = {sum}");
+                    sum = 0;
+                    j++;
+                }
+            }
+
+            int[,] array = new int[,]
+            {
+                {1, 4, 7, 2},
+                {5, 9, 2, 3},
+                {8, 4, 2, 4}
+            };
+
+            SumColumsArray(array);
 
 
 
