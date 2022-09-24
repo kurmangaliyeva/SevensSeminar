@@ -12,6 +12,7 @@ namespace SevensSeminar
             // 1 -3,3 8 -9,9
             // 8 7,8 -7,1 9
 
+            /*   
             Console.WriteLine($"Задача 47: Задайте двумерный массив размером m x n, заполненный случайными вещественными числами.");
 
             Console.Write("Введите m: ");
@@ -50,14 +51,50 @@ namespace SevensSeminar
                     Console.Write(alignNumber + " ");
                 }
                 Console.WriteLine();
-            }
-            }
+            } }
+            
+            */
 
-
-
-
+            /* Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+            Например, задан массив:
+            1 4 7 2
+            5 9 2 3
+            8 4 2 4
+            17 -> такого числа в массиве нет */
 
             
-        }
+            void FindElement(int[,] array, int posRows, int posColums){
+                if (posRows < array.GetLength(0) && posColums < array.GetLength(1))
+                    Console.Write(array[posRows, posColums]);
+                else Console.Write("Такого числа нет");
+            }
+
+
+            int[,] array = new int[,]{
+                {1, 4, 7, 2},
+                {5, 9, 2, 3},
+                {8, 4, 2, 4},
+                {4, 5, 7, 2}
+            };
+
+            Console.Write("Введите строку: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите столбец: ");
+            int colums = Convert.ToInt32(Console.ReadLine());
+
+            FindElement(array, rows, colums);
+
+
+
+
+
+
+
+        
+
+
+        
     }
+} 
+
 }
